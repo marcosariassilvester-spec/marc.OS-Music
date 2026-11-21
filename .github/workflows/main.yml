@@ -20,6 +20,7 @@ jobs:
           gradle-version: "8.9"
       - run: unzip -q marcOS_parte1.zip
       - run: sed -i 's/compileSdk = 34/compileSdk = 35/' marcOS/app/build.gradle.kts
+      - run: printf 'android.useAndroidX=true\norg.gradle.jvmargs=-Xmx3g\n' > marcOS/gradle.properties
       - name: Build
         working-directory: marcOS
         run: |
